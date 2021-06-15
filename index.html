@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nivo-slider.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -44,9 +45,11 @@
     </nav>
 
     <section class="sliders">
-        <div class="container">
-            <img src="	https://via.placeholder.com/894x290" alt="">
+        <div class="container" id="slider">
+            <img src="demo/images/up.jpg" alt="" title=" Um titulo qualquer" >
+            <img src="demo/images/toystory.jpg" alt="" title="#htmllink" >
         </div>
+        <div id="htmllink" class="nivo-html-caption"> UM texto com um <a href="#">link</a>. </div>
     </section>
 
     <article class="container artigo">
@@ -118,5 +121,14 @@
             <p>Rodape</p>
         </div>
     </footer>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.nivo.slider.js"></script>
+
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('#slider').nivoSlider();
+        });
+    </script> 
 </body>
 </html>

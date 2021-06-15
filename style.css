@@ -66,86 +66,83 @@ footer ul{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    text-transform: uppercase;
     padding: 12px 8px;
+    text-transform: uppercase;
 }
 
 nav .imagem{
+    align-items: center;
+    background-color: var(--primeira-cor);
+    color: var(--primeira-cor-fonte);
+    display: flex;
     font-size: 18px;
     font-weight:600;
     height: 60px;
-    width:196px;
-
-    align-items: center;
-    display: flex;
     justify-content: center;    
-
-    background-color: var(--primeira-cor);
-    color: var(--primeira-cor-fonte);
+    width:196px;
 }
 
 nav ul{
-    display: flex;
     align-items: flex-end;
+    display: flex;
     gap: 4px;
     list-style: none;
 }
 
+nav li{
+    position: relative;
+}
 
-nav a{
+
+ul a,
+ul span{
     color: var(--segunda-cor-fonte);
+    cursor:pointer;
+    display: block;
+    padding: 4px 8px;
     text-decoration: none;
-    padding: 4px 12px;
 }
 
 nav li:last-child a{
     padding-right: 4px;
 }
 
-/* menu dropdown 1 */
+/* menu dropdown */
+.dropdown{
+    align-items: center;
+    background-color: var(--primeira-cor);
+    display: none;
+    flex-direction: column;
+    left: 8px;
+    position: absolute;
+    width: 130px;
+    z-index: 10;
+}
 
-nav li{
+.dropdown a,
+.dropdown span{
+    color: #fff;
+}
+
+nav li:hover ul.dropdown{
+    display: flex;
+}
+
+.dropdown li{
     position: relative;
 }
 
-nav li ul.dropdown{
-    background-color: red;
-    display: block;
-    position: absolute;
-    top: 32px;
-}
-
-nav li ul.dropdown li{
+ul.dropdown li ul.dropdown{
+    background-color:var(--primeira-cor);
     display: none;
-}
-
-nav li:hover ul.dropdown li{
-    display: block;
-}
-
-nav li ul.dropdown a{
-    display: block;
-    font-size: 14px;
-    width: 94px;
-    padding: 4px 8px;
-    color:#000;
-}
-
-/* dropdown 2 */
-
-nav li ul.dropdown ul.dropdown{
-    background-color: green;
+    left: 116px;
     position: absolute;
     top: 0;
-    left: 94px;
+    width: 130px;
 }
 
-nav li ul.dropdown ul.dropdown{
-    display: none;
-}
-
-nav li ul.dropdown li:hover ul.dropdown{
-    display: block;
+ul.dropdown li:hover ul.dropdown{
+    display: flex;
 }
 
 /* Slide */
@@ -197,8 +194,8 @@ nav li ul.dropdown li:hover ul.dropdown{
     flex-direction: column;
     height: 100%;
     justify-content: flex-end;
-    position: absolute;
     padding-bottom: 8%;
+    position: absolute;
     top: 0;
     width: 100%;
 }
@@ -247,9 +244,9 @@ footer{
 }
 
 footer ul{
-    list-style: none;
-    justify-content: center;
     gap: 28px;
+    justify-content: center;
+    list-style: none;
 }
 
 footer ul a{
@@ -259,10 +256,10 @@ footer ul a{
 
 footer div:last-child p{
     color: var(--primeira-cor-fonte);
-    text-align: center;
-    padding: 40px;
-    text-transform: uppercase;
     font-weight: 500;
+    padding: 40px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 
@@ -316,6 +313,18 @@ footer div:last-child p{
     .artigo h1{
         text-align: center;
     }
+
+    /* drop */
+    ul.dropdown{
+        left:50%;
+        transform: translateX(-50%);
+    }
+
+    ul.dropdown li ul.dropdown{
+        left:50%;
+        transform: translateX(-50%);
+        top: 27px;
+    }
 }
 
 @media screen and (max-width: 375px){
@@ -365,26 +374,3 @@ footer div:last-child p{
     border-radius: 16px 0 0 16px;
 
 }
-
-/* 
-inicio:
-    13/06 as 23:30 
-fim:
-    14/06 as 1:30
-
-inicio:
-    14/06 as 19:30 
-fim:
-    14/06 as 00:54
-
-    
-
-*/
-
-/*
-
-observação:
-
-tem 8px para dentro do container todo
-
-*/
